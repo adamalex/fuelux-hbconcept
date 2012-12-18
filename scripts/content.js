@@ -25,6 +25,11 @@ define(function (require) {
 				if ($this.data('checkbox')) return;
 				$this.checkbox($this.data());
 			});
+			$content.find('.radio-custom > input[type=radio]').each(function () {
+				var $this = $(this);
+				if ($this.data('radio')) return;
+				$this.radio($this.data());
+			});
 		});
 
 		// Reconfigure navigation display

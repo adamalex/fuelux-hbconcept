@@ -6,7 +6,8 @@ define(function (require) {
 	var Templates = {
 		checkboxes: Handlebars.compile(require('text!templates/controls/checkboxes.hbs')),
 		combobox: Handlebars.compile(require('text!templates/controls/combobox.hbs')),
-		pillbox: Handlebars.compile(require('text!templates/controls/pillbox.hbs'))
+		pillbox: Handlebars.compile(require('text!templates/controls/pillbox.hbs')),
+		radios: Handlebars.compile(require('text!templates/controls/radios.hbs'))
 	};
 
 	Handlebars.registerHelper('checkboxes', function (items) {
@@ -19,6 +20,11 @@ define(function (require) {
 
 	Handlebars.registerHelper('pillbox', function (items) {
 		return new Handlebars.SafeString(Templates.pillbox(items));
+	});
+
+	Handlebars.registerHelper('radios', function (items, options) {
+		var data = { items: items, name: options.hash.name };
+		return new Handlebars.SafeString(Templates.radios(data));
 	});
 
 	return Handlebars;
