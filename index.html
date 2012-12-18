@@ -6,10 +6,32 @@
 	<link href="vendor/fuelux/css/fuelux.css" rel="stylesheet">
 	<style>
 		body { padding-top: 60px; }
+		#Navigation li { cursor: pointer; }
 	</style>
 </head>
 
 <body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">Fuel UX</a>
+
+			<div class="nav-collapse collapse">
+				<ul id="Navigation" class="nav">
+					<li data-content="step1"><a>Step 1</a></li>
+					<li data-content="step2"><a>Step 2</a></li>
+					<li data-content="step3"><a>Step 3</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
 <div id="PageContent"></div>
 
