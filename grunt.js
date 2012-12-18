@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		lint: {
-			files: ['grunt.js', 'scripts/app.js', 'scripts/app/**/*.js']
+			files: ['grunt.js', 'scripts/**/*.js']
 		},
 		watch: {
 			files: '<config:lint.files>',
