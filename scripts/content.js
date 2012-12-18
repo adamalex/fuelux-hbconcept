@@ -30,6 +30,11 @@ define(function (require) {
 				if ($this.data('radio')) return;
 				$this.radio($this.data());
 			});
+			$content.find('.select').each(function () {
+				var $this = $(this);
+				if ($this.data('select')) return;
+				$this.select($this.data());
+			});
 		});
 
 		// Reconfigure navigation display

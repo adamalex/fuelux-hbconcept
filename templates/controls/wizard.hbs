@@ -1,0 +1,12 @@
+<div class="wizard">
+	<ul class="steps">
+		<li class="active"><span class="badge badge-info">1</span>{{first}}<span class="chevron"></span></li>
+		{{#each others}}
+		<li><span class="badge">{{number}}</span>{{name}}<span class="chevron"></span></li>
+		{{/each}}
+	</ul>
+	<div class="actions">
+		<button class="btn btn-mini btn-primary btn-prev"> <i class="icon-white icon-arrow-left"></i>Prev</button>
+		<button class="btn btn-mini btn-primary btn-next" data-last="Finish">Next<i class="icon-white icon-arrow-right"></i></button>
+	</div>
+</div>
