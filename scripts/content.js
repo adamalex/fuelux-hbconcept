@@ -1,8 +1,10 @@
 // Load page content from Handlebars template
 define(function (require) {
 
-	var Handlebars = require('handlebars');
+	var data = require('./data');
+	var Handlebars = require('./fuelux-handlebars');
 	var $ = require('jquery');
+	require('fuelux/all');
 
 	var $navigation = $('#Navigation');
 
@@ -13,7 +15,7 @@ define(function (require) {
 
 		// Load template and apply it to the page with Handlebars
 		require(['text!templates/' + content + '.hbs'], function (template) {
-			$('#PageContent').html(Handlebars.compile(template)());
+			$('#PageContent').html(Handlebars.compile(template)(data));
 		});
 
 		// Reconfigure navigation display

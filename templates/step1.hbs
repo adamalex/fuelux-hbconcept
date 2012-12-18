@@ -1,7 +1,12 @@
 <div class="container">
 
-	<h1>Step 1</h1>
-
-	<p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+	<div class="input-append dropdown combobox">
+		<input class="span2" type="text"><button class="btn" data-toggle="dropdown"><i class="caret"></i></button>
+		<ul class="dropdown-menu">
+			{{#each colors}}
+				<li><a href="#">{{this}}</a></li>
+			{{/each}}
+		</ul>
+	</div>
 
 </div>
