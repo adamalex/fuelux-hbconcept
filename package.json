@@ -1,0 +1,13 @@
+{
+  "amd": {},
+  "volo": {
+    "baseUrl": "scripts/lib",
+    "dependencies": {
+      "require": "github:jrburke/requirejs/2.1.2",
+      "fuelux": "github:ExactTarget/fuelux/2.2-wip"
+    }
+  },
+  "dependencies": {
+    "grunt": "~0.3.17"
+  }
+}
