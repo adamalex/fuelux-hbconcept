@@ -7,15 +7,24 @@ define(function (require) {
 	require('fuelux/all');
 
 	var $navigation = $('#Navigation');
+	var $content = $('#PageContent');
 
 	function loadContent() {
 		// Determine content, defaulting to step1
 		if (!location.hash) location.hash = 'step1';
 		var content = location.hash.substring(1);
 
-		// Load template and apply it to the page with Handlebars
+		// Load template and apply content to document
 		require(['text!templates/' + content + '.hbs'], function (template) {
-			$('#PageContent').html(Handlebars.compile(template)(data));
+			// Apply template to the document with Handlebars
+			$content.html(Handlebars.compile(template)(data));
+
+			// Initialize controls
+			$content.find('.checkbox-custom > input[type=checkbox]').each(function () {
+				var $this = $(this);
+				if ($this.data('checkbox')) return;
+				$this.checkbox($this.data());
+			});
 		});
 
 		// Reconfigure navigation display
