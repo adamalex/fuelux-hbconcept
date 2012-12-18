@@ -1,25 +1,31 @@
 // Load page content from Handlebars template
 define(function (require) {
 
-	var data = require('./data');
-	var Handlebars = require('./fuelux-handlebars');
+	// Load libraries
 	var $ = require('jquery');
 	require('fuelux/all');
 
+	// Load sample data and demo logic
+	var sampledata = require('./sampledata');
+	var Handlebars = require('./fuelux-handlebars');
+
+	// Cache jQuery references
 	var $navigation = $('#Navigation');
 	var $content = $('#PageContent');
 
 	function loadContent() {
-		// Determine content, defaulting to step1
+
+		// Get current url hash, defaulting to step1
 		if (!location.hash) location.hash = 'step1';
 		var content = location.hash.substring(1);
 
-		// Load template and apply content to document
+		// Dynamically load template with RequireJS
 		require(['text!templates/' + content + '.hbs'], function (template) {
-			// Apply template to the document with Handlebars
-			$content.html(Handlebars.compile(template)(data));
 
-			// Initialize controls
+			// Apply template to the document with Handlebars
+			$content.html(Handlebars.compile(template)(sampledata));
+
+			// Initialize newly-added controls
 			$content.find('.checkbox-custom > input[type=checkbox]').each(function () {
 				var $this = $(this);
 				if ($this.data('checkbox')) return;
@@ -37,7 +43,7 @@ define(function (require) {
 			});
 		});
 
-		// Reconfigure navigation display
+		// Update navigation display
 		$navigation.find('li').removeClass('active');
 		$navigation.find('[data-content="' + content + '"]').addClass('active');
 	}
@@ -47,7 +53,7 @@ define(function (require) {
 		location.hash = $(this).data('content');
 	});
 
-	// Load content on hash change and page load
+	// Load content on hash change and first module load
 	$(window).on('hashchange', loadContent);
 	loadContent();
 });

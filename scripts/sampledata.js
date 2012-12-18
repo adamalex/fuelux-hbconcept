@@ -1,3 +1,4 @@
+// Standalone sample data module
 define({
 	colors: [
 		'Red',

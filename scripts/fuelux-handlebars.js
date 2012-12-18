@@ -3,6 +3,7 @@ define(function (require) {
 
 	var Handlebars = require('handlebars');
 
+	// Load and cache compiled templates in Templates namespace
 	var Templates = {
 		checkboxes: Handlebars.compile(require('text!templates/controls/checkboxes.hbs')),
 		combobox: Handlebars.compile(require('text!templates/controls/combobox.hbs')),
@@ -13,6 +14,8 @@ define(function (require) {
 		spinner: Handlebars.compile(require('text!templates/controls/spinner.hbs')),
 		wizard: Handlebars.compile(require('text!templates/controls/wizard.hbs'))
 	};
+
+	// Register Handlebars helpers for all controls
 
 	Handlebars.registerHelper('checkboxes', function (items) {
 		return new Handlebars.SafeString(Templates.checkboxes(items));

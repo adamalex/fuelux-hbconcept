@@ -13,4 +13,4 @@ require.config({
 });
 
 // Load page content
-require(['app/content']);
+require(['app/samplecontent']);
