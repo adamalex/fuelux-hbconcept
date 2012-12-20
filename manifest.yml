@@ -1,0 +1,9 @@
+--- 
+applications: 
+- name: fuelux-hbconcept
+  instances: 1
+  framework: node
+  memory: 64M
+  url: fuelux-hbconcept.${target-base}
+  runtime: node08
+  path: .
