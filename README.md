@@ -11,6 +11,8 @@ Allows for one-step generation of markup and control instantiation using Handleb
 * Support more parameters for customization
  * Similar to existing `{{radios mydata name="mygroup"}}`
 * Internationalization support
+* See similar work for Angular
+ * http://mgcrea.github.com/angular-strap/
 * Consider databinding support, possibilities:
  * http://bruth.github.com/synapse/docs/
  * http://rivetsjs.com/
